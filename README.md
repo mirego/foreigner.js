@@ -2,6 +2,8 @@
 
 `Foreigner` is a JavaScript library that will help you with translations.
 
+[![Build Status](https://travis-ci.org/mirego/foreigner.js.png?branch=master)](https://travis-ci.org/mirego/foreigner.js)
+
 ## Usage
 
 ### Setting the locale
