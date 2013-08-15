@@ -1,0 +1,31 @@
+{
+  "name": "foreigner.js",
+  "version": "0.0.1",
+  "description": "Foreigner is a JavaScript library that will help you with translations.",
+  "main": "foreigner.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "grunt",
+    "test": "grunt karma"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mirego/foreigner.js.git"
+  },
+  "author": "Charles Demers <cdemers@mirego.com>",
+  "license": "BSD 3-Clause",
+  "bugs": {
+    "url": "https://github.com/mirego/foreigner.js/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-umd": "~1.1.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-karma": "~0.6.1",
+    "karma": "~0.10.1",
+    "karma-phantomjs-launcher": "~0.1.0",
+    "karma-jasmine": "~0.1.0"
+  }
+}
