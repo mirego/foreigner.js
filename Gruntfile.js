@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     umd: {
       all: {
         src: 'lib/foreigner.js',
-        dest: 'foreigner.js',
+        dest: 'dist/foreigner.js',
         objectToExport: 'foreigner',
         amdModuleId: 'foreigner',
         globalAlias: 'foreigner',
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
       },
       foreigner: {
         files: {
-          'foreigner.min.js': ['lib/foreigner.js']
+          'dist/foreigner.min.js': ['lib/foreigner.js']
         }
       }
     }

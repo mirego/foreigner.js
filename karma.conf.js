@@ -3,7 +3,7 @@ module.exports = function(config) {
     browsers: ['PhantomJS'],
     frameworks: ['jasmine'],
     basePath: '',
-    files: ['foreigner.js', 'test/*_spec.js'],
+    files: ['dist/foreigner.js', 'test/*_spec.js'],
     colors: true,
     singleRun: true,
     reporters: ['dots']
