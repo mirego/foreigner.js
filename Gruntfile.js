@@ -1,6 +1,7 @@
 
 module.exports = function(grunt) {
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
 
     umd: {
       all: {
@@ -21,19 +22,37 @@ module.exports = function(grunt) {
 
     uglify: {
       options: {
-        mangle: {
-          except: ['foreigner']
-        }
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
+                ' * http://github.com/mirego/foreigner.js\n' +
+                ' *\n' +
+                ' *' +
+                ' * Copyright (c) 2013 Mirego <http://mirego.com>;\n' +
+                ' * Licensed under the New BSD license */\n\n'
       },
       foreigner: {
+        options: {
+          beautify: true,
+          mangle: false,
+          compress: false
+        },
         files: {
-          'dist/foreigner.min.js': ['lib/foreigner.js']
+          'dist/foreigner.js': ['dist/foreigner.js']
+        }
+      },
+      foreigner_min: {
+        options: {
+          mangle: {
+            except: ['foreigner']
+          }
+        },
+        files: {
+          'dist/foreigner.min.js': ['dist/foreigner.js']
         }
       }
     }
   });
 
-  grunt.registerTask('default', ['umd', 'karma', 'uglify']);
+  grunt.registerTask('default', ['umd', 'karma', 'uglify:foreigner', 'uglify:foreigner_min']);
 
   grunt.loadNpmTasks('grunt-umd');
   grunt.loadNpmTasks('grunt-karma');
