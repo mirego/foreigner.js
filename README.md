@@ -74,7 +74,7 @@ foreigner.t('good_day_to_you', {gender: 'female'});
 // => Bonjour à vous madame.
 
 foreigner.t('the_cake_is', {opinion: 'dont_know'});
-// => La gâteau est un mensonge.
+// => Le gâteau est un mensonge.
 ```
 
 ### Using multiple interpolations, plurals and selects
