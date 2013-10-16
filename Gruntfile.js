@@ -47,6 +47,12 @@ module.exports = function(grunt) {
           'dist/foreigner.min.js': ['dist/foreigner.js']
         }
       }
+    },
+
+    coveralls: {
+      options: {
+        coverage_dir: 'coverage'
+      }
     }
   });
 
@@ -54,5 +60,6 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-umd');
   grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-karma-coveralls');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 };
