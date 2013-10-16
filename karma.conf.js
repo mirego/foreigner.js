@@ -6,6 +6,13 @@ module.exports = function(config) {
     files: ['dist/foreigner.js', 'test/*_spec.js'],
     colors: true,
     singleRun: true,
-    reporters: ['dots']
+    reporters: ['dots', 'coverage'],
+    preprocessors: {
+      'dist/foreigner.js': 'coverage'
+    },
+    coverageReporter: {
+      type: 'lcov',
+      dir: 'coverage/'
+    }
   });
 };
