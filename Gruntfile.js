@@ -51,12 +51,13 @@ module.exports = function(grunt) {
 
     coveralls: {
       options: {
-        coverage_dir: 'coverage'
+        coverage_dir: 'coverage/'
       }
     }
   });
 
   grunt.registerTask('default', ['umd', 'karma', 'uglify:foreigner', 'uglify:foreigner_min']);
+  grunt.registerTask('test', ['karma', 'coveralls']);
 
   grunt.loadNpmTasks('grunt-umd');
   grunt.loadNpmTasks('grunt-karma');
