@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/mirego/foreigner.js.png?branch=master)](https://travis-ci.org/mirego/foreigner.js)
 [![Coverage Status](https://coveralls.io/repos/mirego/foreigner.js/badge.png?branch=master)](https://coveralls.io/r/mirego/foreigner.js?branch=master)
+[![Code Climate](https://codeclimate.com/github/mirego/foreigner.js.png)](https://codeclimate.com/github/mirego/foreigner.js)
 
 `Foreigner` is a JavaScript library that will help you with translations.
 
