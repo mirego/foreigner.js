@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
                 ' * http://github.com/mirego/foreigner.js\n' +
                 ' *\n' +
-                ' * Copyright (c) 2013 Mirego <http://mirego.com>;\n' +
+                ' * Copyright (c) <%= grunt.template.today("yyyy") %> Mirego <http://mirego.com>;\n' +
                 ' * Licensed under the New BSD license */\n\n'
       },
       foreigner: {
