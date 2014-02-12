@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test:coverage"
   },
   "repository": {
     "type": "git",
@@ -20,13 +20,13 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-umd": "~1.1.0",
-    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-umd": "~1.6.1",
+    "grunt-contrib-uglify": "~0.3.2",
     "grunt-karma": "~0.6.1",
     "karma": "~0.10.1",
     "karma-phantomjs-launcher": "~0.1.0",
     "karma-jasmine": "~0.1.0",
-    "grunt-karma-coveralls": "~2.0.2",
+    "grunt-karma-coveralls": "~2.3.0",
     "karma-coverage": "~0.1.0"
   }
 }

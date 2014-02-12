@@ -1,11 +1,12 @@
-
+// jshint camelcase:false
+/* global describe, it, expect, beforeEach, afterEach, foreigner */
 describe('Interpolations', function() {
-
   describe('Plurals', function() {
 
     beforeEach(function() {
       foreigner.locale = 'en';
       foreigner.translations.en = {
+        greet: 'Hello, {name}',
         found_coins: 'You found {coinsCount, plural, zero{# coins} one{one coin} two{two coins} other{# coins}}.',
         skill_points: 'You have {skillPoints, plural, 2{2 skill points} two{two skill points} 4{four skill points}} to spend.',
         found_gems: 'You found {gemsCount, plural, other{gems}}.'
@@ -15,6 +16,14 @@ describe('Interpolations', function() {
     afterEach(function() {
       foreigner.locale = '';
       foreigner.translations = {};
+    });
+
+    it('should be able to do a simple interpolation', function() {
+      expect(foreigner.t('greet', {name: 'Wanderer'})).toEqual('Hello, Wanderer');
+    });
+
+    it('should return the string with an empty string as the replacement if the variable provided is null', function() {
+      expect(foreigner.t('greet', {name: null})).toEqual('Hello, ');
     });
 
     it('should be able to match `zero` given a value of 0', function() {
@@ -44,7 +53,6 @@ describe('Interpolations', function() {
     it('should be able to match `other` when no other choice is defined', function() {
       expect(foreigner.t('found_gems', {gemsCount: 1})).toEqual('You found gems.');
     });
-
   });
 
   describe('Selects', function() {
@@ -68,7 +76,5 @@ describe('Interpolations', function() {
     it('should be able to fall back to `other` when the value doesn’t match any choice', function() {
       expect(foreigner.t('the_cake_is', {opinion: 'dont_know'})).toEqual('The cake is a lie.');
     });
-
   });
-
 });

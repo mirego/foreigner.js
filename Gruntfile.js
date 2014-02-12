@@ -1,3 +1,4 @@
+// jshint node:true, camelcase:false
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -57,7 +58,8 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('default', ['umd', 'karma', 'uglify:foreigner', 'uglify:foreigner_min']);
-  grunt.registerTask('test', ['karma', 'coveralls']);
+  grunt.registerTask('test', ['karma']);
+  grunt.registerTask('test:coverage', ['karma', 'coveralls']);
 
   grunt.loadNpmTasks('grunt-umd');
   grunt.loadNpmTasks('grunt-karma');
