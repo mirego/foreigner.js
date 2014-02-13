@@ -1,4 +1,5 @@
-
+// jshint camelcase:false
+/* global describe, it, expect, beforeEach, afterEach, foreigner */
 describe('Key lookup', function() {
 
   beforeEach(function() {
@@ -35,6 +36,10 @@ describe('Key lookup', function() {
     expect(foreigner.t('level_one.level_two.level_three.diablo')).toEqual('Diablo');
   });
 
+  it('should return null if a key path cannot be resolved', function() {
+    expect(foreigner.t('level_one.unknown_key')).toEqual(null);
+  });
+
   it('should be able to lookup a key from an alias', function() {
     expect(foreigner.t('magic_portal')).toEqual('Diablo');
   });
@@ -42,5 +47,4 @@ describe('Key lookup', function() {
   it('should be able to lookup a key from an alias recusively', function() {
     expect(foreigner.t('tristram_portal')).toEqual('Diablo');
   });
-
 });
