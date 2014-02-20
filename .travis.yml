@@ -1,5 +1,15 @@
 language: node_js
+
 node_js:
   - 0.10
+
 before_install:
   - npm install -g grunt-cli
+
+notifications:
+  hipchat:
+    rooms:
+      secure: "biXdOodiTWGQERakm/xIpOl/udOmo7je8I201qG1E7MBXGdLa9AgxEHbkRbEiihATa7vgD3pd/u+DkVM1ndFkKrpRUtY/nWuzXn/kL60vWT9H+7UIM12GNftpgrOVMWQqKanGEcv84TzepNZ9TC9kHnhCQEXbYmm2rPqAwasDVA="
+    template:
+      - '%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message} (<a href="%{build_url}">Build</a>/<a href="%{compare_url}">Changes</a>)'
+    format: 'html'
