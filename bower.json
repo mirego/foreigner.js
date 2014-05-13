@@ -1,0 +1,30 @@
+{
+  "name": "foreigner.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mirego/foreigner.js",
+  "authors": [
+    "Charles Demers <cdemers@mirego.com>"
+  ],
+  "description": "Foreigner is a JavaScript library that will help you with translations.",
+  "main": "dist/foreigner.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "foreigner",
+    "translations"
+  ],
+  "license": "BSD 3-Clause",
+  "ignore": [
+    "**/.*",
+    "Gruntfile.js",
+    "karma.conf.js",
+    "package.json",
+    "coverage",
+    "lib",
+    "node_modules",
+    "test"
+  ]
+}
