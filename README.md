@@ -1,5 +1,6 @@
 # Foreigner.js
 
+[![Bower version](https://badge.fury.io/bo/foreigner.js.svg)](http://badge.fury.io/bo/foreigner.js)
 [![Build Status](http://img.shields.io/travis/mirego/foreigner.js.svg)](https://travis-ci.org/mirego/foreigner.js)
 [![Coverage Status](http://img.shields.io/coveralls/mirego/foreigner.js/master.svg)](https://coveralls.io/r/mirego/foreigner.js?branch=master)
 [![Code Climate](http://img.shields.io/codeclimate/github/mirego/foreigner.js.svg)](https://codeclimate.com/github/mirego/foreigner.js)
