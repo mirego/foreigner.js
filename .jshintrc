@@ -1,0 +1,24 @@
+{
+  "predef": [
+    "foreigner"
+  ],
+
+  "camelcase": true,
+  "curly": false,
+  "indent": 2,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "noempty": true,
+  "undef": true,
+  "unused": true,
+  "maxcomplexity": 6,
+
+  "debug": false,
+  "eqnull": true,
+  "esnext": true,
+
+  "browser": true,
+  "jquery": true,
+  "devel": false
+}
