@@ -9,6 +9,14 @@ describe('Parsing', function() {
       foreigner.translations = {};
     });
 
+    it('should work when the string contains only an interpolation', function() {
+      foreigner.translations.en = {
+        test_1: '{test}'
+      };
+
+      expect(foreigner.t('test_1', {test: 'Hello'})).toEqual('Hello');
+    });
+
     it('should output the string as-is when parameters aren’t passed', function() {
       foreigner.translations.en = {
         test_1: 'Hello, {name}.'
@@ -52,15 +60,13 @@ describe('Parsing', function() {
         test_1: '{test }',
         test_2: '{ test}',
         test_3: '{test  }',
-        test_4: '{  test}',
-        test_5: '{test}'
+        test_4: '{  test}'
       };
 
       expect(foreigner.t('test_1', {test: 'Hello'})).toEqual('Hello');
       expect(foreigner.t('test_2', {test: 'Hello'})).toEqual('Hello');
       expect(foreigner.t('test_3', {test: 'Hello'})).toEqual('Hello');
       expect(foreigner.t('test_4', {test: 'Hello'})).toEqual('Hello');
-      expect(foreigner.t('test_5', {test: 'Hello'})).toEqual('Hello');
     });
 
     it('should maintain exact strings - not affected by variables', function() {
