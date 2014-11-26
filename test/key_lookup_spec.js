@@ -1,5 +1,3 @@
-// jshint camelcase:false
-/* global describe, it, expect, beforeEach, afterEach, foreigner */
 describe('Key lookup', function() {
 
   beforeEach(function() {
@@ -25,7 +23,7 @@ describe('Key lookup', function() {
 
   it('should throw an error if no locale is set', function() {
     foreigner.locale = '';
-    expect(function() {foreigner.t('greetings'); }).toThrow();
+    expect(function() { foreigner.t('greetings'); }).toThrow();
   });
 
   it('should be able to lookup a key', function() {
