@@ -1,4 +1,4 @@
-/*! foreigner.js - v0.0.1 - 2014-11-26
+/*! foreigner.js - v0.1.0 - 2014-11-26
  * http://github.com/mirego/foreigner.js
  *
  * Copyright (c) 2013-2014 Mirego <http://mirego.com>;

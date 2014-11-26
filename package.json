@@ -1,6 +1,6 @@
 {
   "name": "foreigner.js",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Foreigner is a JavaScript library that will help you with translations.",
   "main": "foreigner.js",
   "directories": {
