@@ -5,10 +5,12 @@
  * Licensed under the New BSD license */
 
 (function(root, factory) {
-    if (typeof exports === "object") {
+    if (typeof define === "function" && define.amd) {
+        define("foreigner", [], function() {
+            return root.returnExportsGlobal = factory();
+        });
+    } else if (typeof exports === "object") {
         module.exports = factory();
-    } else if (typeof define === "function" && define.amd) {
-        define("foreigner", [], factory);
     } else {
         root["foreigner"] = factory();
     }
