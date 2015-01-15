@@ -12,7 +12,8 @@ describe('Key lookup', function() {
         }
       },
       magic_portal: '!level_one.level_two.level_three.diablo',
-      tristram_portal: '!magic_portal'
+      tristram_portal: '!magic_portal',
+      weekdays: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     };
   });
 
@@ -44,5 +45,11 @@ describe('Key lookup', function() {
 
   it('should be able to lookup a key from an alias recusively', function() {
     expect(foreigner.t('tristram_portal')).toEqual('Diablo');
+  });
+
+  it('should be able to lookup and return an array value', function() {
+    expect(function() { foreigner.t('weekdays'); }).not.toThrow();
+    expect(Array.isArray(foreigner.t('weekdays'))).toBe(true);
+    expect(foreigner.t('weekdays')[0]).toEqual('Sunday');
   });
 });
