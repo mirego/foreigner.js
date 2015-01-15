@@ -34,11 +34,13 @@ describe('Parsing', function() {
     });
 
     it('should allow you to escape { and } characters', function() {
+      // jshint ignore:start
       foreigner.translations.en = {
         test_1: '\{test',
         test_2: 'test\}',
         test_3: '\{test\}'
       };
+      // jshint ignore:end
 
       expect(foreigner.t('test_1')).toEqual('{test');
       expect(foreigner.t('test_2')).toEqual('test}');
