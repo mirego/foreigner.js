@@ -1,7 +1,7 @@
-/*! foreigner.js - v0.1.0 - 2014-11-26
+/*! foreigner.js - v0.1.0 - 2015-01-15
  * http://github.com/mirego/foreigner.js
  *
- * Copyright (c) 2013-2014 Mirego <http://mirego.com>;
+ * Copyright (c) 2013-2015 Mirego <http://mirego.com>;
  * Licensed under the New BSD license */
 
 (function(root, factory) {
@@ -33,11 +33,11 @@
     };
     var lookupKeyPath = function(keyPath) {
         var paths = keyPath.split(".");
-        value = foreigner.translations[foreigner.locale];
+        var value = foreigner.translations[foreigner.locale];
         var index = 0;
         while (index < paths.length && value) {
             var path = paths[index];
-            value = typeof value == "object" && path in value ? value[path] : null;
+            value = typeof value === "object" && path in value ? value[path] : null;
             index++;
         }
         return value;
@@ -46,7 +46,7 @@
         return foreigner.translations[foreigner.locale][key];
     };
     var lookupAlias = function(string) {
-        while (string && string.charAt(0) == "!") {
+        while (string && string.charAt(0) === "!") {
             string = lookupKey(string.slice(1));
         }
         return string;
@@ -110,7 +110,7 @@
             }
             var string = lookupKey(key);
             if (!string) return null;
-            if (typeof attrs != "object") {
+            if (typeof attrs !== "object") {
                 return string;
             } else {
                 var tokens = parse(string);

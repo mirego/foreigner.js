@@ -4,25 +4,30 @@
     "it",
     "expect",
     "beforeEach",
-    "afterEach"
+    "afterEach",
     "foreigner"
   ],
 
-  "camelcase": true,
-  "curly": false,
+  "camelcase": false,
+  "eqeqeq": true,
+  "freeze": true,
+  "immed": true,
   "indent": 2,
-  "latedef": true,
+  "latedef": false,
   "newcap": true,
   "noarg": true,
   "noempty": true,
+  "noarg": true,
+  "quotmark": "mixed",
   "undef": true,
   "unused": true,
   "maxcomplexity": 6,
 
-  "debug": false,
   "eqnull": true,
-  "esnext": true,
 
-  "browser": true,
-  "devel": false
+  "debug": false,
+  "devel": false,
+
+  "esnext": true,
+  "browser": true
 }
