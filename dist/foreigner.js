@@ -46,7 +46,7 @@
         return foreigner.translations[foreigner.locale][key];
     };
     var lookupAlias = function(string) {
-        while (string && string.charAt(0) === "!") {
+        while (typeof string === "string" && string.charAt(0) === "!") {
             string = lookupKey(string.slice(1));
         }
         return string;
