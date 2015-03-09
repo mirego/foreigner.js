@@ -1,4 +1,4 @@
-/*! foreigner.js - v0.2.0 - 2015-01-15
+/*! foreigner.js - v0.3.0 - 2015-03-09
  * http://github.com/mirego/foreigner.js
  *
  * Copyright (c) 2013-2015 Mirego <http://mirego.com>;
@@ -27,13 +27,13 @@
         "1": "one",
         "2": "two"
     };
-    var lookupKey = function(key) {
-        var string = key.indexOf(".") >= 0 ? lookupKeyPath(key) : lookupSimpleKey(key);
-        return string ? lookupAlias(string) : null;
+    var lookupKey = function(key, locale) {
+        var string = key.indexOf(".") >= 0 ? lookupKeyPath(key, locale) : lookupSimpleKey(key, locale);
+        return string ? lookupAlias(string, locale) : null;
     };
-    var lookupKeyPath = function(keyPath) {
+    var lookupKeyPath = function(keyPath, locale) {
         var paths = keyPath.split(".");
-        var value = foreigner.translations[foreigner.locale];
+        var value = foreigner.translations[locale];
         var index = 0;
         while (index < paths.length && value) {
             var path = paths[index];
@@ -42,12 +42,12 @@
         }
         return value;
     };
-    var lookupSimpleKey = function(key) {
-        return foreigner.translations[foreigner.locale][key];
+    var lookupSimpleKey = function(key, locale) {
+        return foreigner.translations[locale][key];
     };
-    var lookupAlias = function(string) {
+    var lookupAlias = function(string, locale) {
         while (typeof string === "string" && string.charAt(0) === "!") {
-            string = lookupKey(string.slice(1));
+            string = lookupKey(string.slice(1), locale);
         }
         return string;
     };
@@ -105,10 +105,16 @@
         locale: "",
         translations: {},
         t: function(key, attrs) {
-            if (!foreigner.locale) {
-                throw new Error("[foreigner] You tried to lookup a translation before setting a locale.");
+            var locale = foreigner.locale;
+            if (arguments.length === 2 && typeof attrs === "string") {
+                locale = attrs;
+            } else if (arguments.length === 3) {
+                locale = arguments[2];
             }
-            var string = lookupKey(key);
+            if (!locale) {
+                throw new Error("[foreigner] You tried to lookup a translation without setting a locale.");
+            }
+            var string = lookupKey(key, locale);
             if (!string) return null;
             if (typeof attrs !== "object") {
                 return string;
