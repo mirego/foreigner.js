@@ -60,7 +60,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['umd', 'karma', 'uglify:foreigner', 'uglify:foreigner_min']);
   grunt.registerTask('test', ['umd', 'karma']);
-  grunt.registerTask('test:coverage', ['karma', 'coveralls']);
+  grunt.registerTask('test:coverage', ['umd', 'karma', 'coveralls']);
 
   grunt.loadNpmTasks('grunt-umd');
   grunt.loadNpmTasks('grunt-karma');

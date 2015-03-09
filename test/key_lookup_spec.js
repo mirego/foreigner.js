@@ -15,6 +15,11 @@ describe('Key lookup', function() {
       tristram_portal: '!magic_portal',
       weekdays: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     };
+
+    foreigner.translations.special = {
+      testing: 'Testing',
+      testing_interpolation: 'Testing {thing}'
+    };
   });
 
   afterEach(function() {
@@ -51,5 +56,10 @@ describe('Key lookup', function() {
     expect(function() { foreigner.t('weekdays'); }).not.toThrow();
     expect(Array.isArray(foreigner.t('weekdays'))).toBe(true);
     expect(foreigner.t('weekdays')[0]).toEqual('Sunday');
+  });
+
+  it('should be able to lookup a key in a specific locale', function() {
+    expect(foreigner.t('testing', 'special')).toEqual('Testing');
+    expect(foreigner.t('testing_interpolation', {thing: 'something'}, 'special')).toEqual('Testing something');
   });
 });
